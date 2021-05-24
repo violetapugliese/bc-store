@@ -4,7 +4,7 @@ import '../styles/Checkout.css'
 
 const Payment = () => {
     return (
-        <Container>
+        <Container className="min-vh-100">
             <Row>
                 <Col>
                 <div className="Checkout-content">

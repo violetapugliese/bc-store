@@ -4,7 +4,7 @@ import '../styles/Checkout.css';
 
 const Information = () => {
     return (
-        <Container>
+        <Container className="min-vh-100">
             <Row>
                 <Col>
                     <h2>Information</h2>
