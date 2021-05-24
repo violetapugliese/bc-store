@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+.Card{
+    min-height: 364px;
+    justify-content: space-between;
+}
+.CardImg {
+    object-fit: contain;
+}
+.CardBody{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

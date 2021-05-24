@@ -1,10 +1,18 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/Footer.css';
 
 const Footer = () => {
     return (
-        <h1>
-            I'm a Footer
-        </h1>
+        <div className="Footer" style={{background:'black'}}>
+        <Container  >
+            <Row>
+                <Col >
+            <p>Hecho con ♥ Violeta Pugliese 2021</p>
+                </Col>
+            </Row>
+        </Container>
+        </div>
     );
 }
 
