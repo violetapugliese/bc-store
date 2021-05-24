@@ -54,3 +54,10 @@
 a {
   text-decoration: none;
 }
+
+form input{
+  margin-top: 1rem;
+}
+.FormButton{
+  margin-bottom: 2rem;
+}
