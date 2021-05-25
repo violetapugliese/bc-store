@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../styles/Checkout.css';
 
 const Information = () => {
@@ -21,14 +22,7 @@ const Information = () => {
                             <Form.Control type="password" name="phone" placeholder="Phone" />
                         </Form.Group>
                     </Form>
-                    <div className="FormButton">
-                    <Button variant="danger" type="submit">
-                        Cancelar
-                        </Button>
-                    <Button variant="primary" type="submit">
-                        Continuar Compra
-                    </Button>
-                    </div>
+
                 </Col>
                 <Col>
                     <div className="Checkout-content">
@@ -38,12 +32,22 @@ const Information = () => {
                                 <h4>ITEM name</h4>
                                 <span>$10</span>
                             </div>
-                            <button type="button">Eliminar</button>
                         </div>
                     </div>
                     <div className="Checkout-sidebar">
                         <h3>Precio Total: $10</h3>
-                        <button type="button">Continuar Compra</button>
+                        <div className="FormButton">
+                            <Link to="/checkout">
+                                <Button variant="danger" type="submit">
+                                    Cancelar
+                                </Button>
+                            </Link>
+                            <Link to="/checkout/payment">
+                                <Button variant="primary" type="submit" variant="primary">
+                                    Continuar Compra
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
                 </Col>
             </Row>

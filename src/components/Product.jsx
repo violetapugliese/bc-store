@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import '../styles/Product.css'
 
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart }) => {
     return (
         <div className="Product-Item">
 
@@ -14,7 +14,7 @@ const Product = ({ product }) => {
                        <span>$ {product.price}</span>
                        <p>{product.description}</p>
                     </Card.Text>
-                    <Button type="button" variant="primary">Comprar</Button>
+                    <Button type="button" variant="primary" onClick={handleAddToCart(product)}>Comprar</Button>
                 </Card.Body>
             </Card>
         </div>
