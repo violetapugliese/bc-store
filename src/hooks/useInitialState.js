@@ -20,6 +20,7 @@ const useInitialState = () => {
         });
       };
 
+      // submit del formulario. Toma los datos ingresados en input y los lleva al array de "buyer" en initialState 
     const addToBuyer = payload =>{
         setState({
             ...state,
