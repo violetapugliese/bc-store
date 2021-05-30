@@ -1,45 +1,42 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+import express from 'express';
+import dotenv from 'dotenv';
+import webpack from 'webpack';
 
-// SDK de Mercado Pago
-const mercadopago = require ('mercadopago');
+dotenv.config();
 
-//middleware
+const { ENV, PORT } = process.env;
+const app  = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
 
-// Agrega credenciales
-mercadopago.configure({
-    access_token: 'APP_USR-6623451607855904-111502-1f258ab308efb0fb26345a2912a3cfa5-672708410'
-  });
+if (ENV == 'development') {
+  console.log('Development config');
+  const webpackConfig = require('../../webpack.config');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const compiler = webpack(webpackConfig);
+  const serverConfig = { port : PORT,  hot: true };
 
-//routes
-app.post('/test', (req, res) => {
-// Crea un objeto de preferencia
+  app.use(webpackDevMiddleware(compiler, serverConfig));
+  app.use(webpackHotMiddleware(compiler));
+} 
 
-let preference = {
-    items: [
-      {
-        title:req.body.title,
-        unit_price: parseInt(req.body.price),
-        quantity: 1,
-      }
-    ]
-  };
-  
-  mercadopago.preferences.create(preference)
-  .then(function(response){
-  
-    res.redirect(response.body.init_point);
-   
-  }).catch(function(error){
-    console.log(error);
-  });
-});
+app.get('*', (req, res) => {
+  res.send(`
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <link href="assets/app.css" type="text/css"> 
+      <title>My store</title>
+    </head>
+    <body>
+      <div id="root"></div>
+      <script src="assets/app.js" type="text/javascript"></script>
+    </body>
+  </html>
+  `);
+});  
 
-//server
-
-app.listen(3000, () => {
-    console.log("Server on port 3000");
+app.listen(PORT, (err) => {
+  if(err) console.log(err);
+  else console.log('server running in port 3005');
 });
