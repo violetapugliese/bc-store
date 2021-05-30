@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import '../styles/Checkout.css';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 
 
 const Checkout = () => {
@@ -20,9 +19,9 @@ const Checkout = () => {
     }
 
     return (
-        <Container className="min-vh-100">
-            <Row>
-                <Col>
+        <div className="container min-vh-100">
+            <div className="row">
+                <div className="col">
                     <div className="Checkout-content">
                         {cart.length > 0 ? <h3>Lista de precios</h3> : <h3>Sin Pedidos...</h3>}
                         {cart.map((item, i) => (
@@ -37,22 +36,22 @@ const Checkout = () => {
                             </div>
                         ))}
                     </div>
-                </Col>
-                <Col>
+                </div>
+                <div className="col">
                 {cart.length > 0 && (
                     <div className="Checkout-sidebar">
                         <h3>{`Precio Total: $ ${handleSumTotal()}`}</h3>
                         <Link to="/checkout/information">
-                            <Button variant="primary" type="submit" variant="primary">
+                            <button className="btn btn-primary" type="submit">
                                 Continuar Compra
-                            </Button>
+                            </button>
                         </Link>
                     </div>
                 )}
-                </Col>
+                </div>
 
-            </Row>
-        </Container>
+            </div>
+        </div>
 
     );
 }

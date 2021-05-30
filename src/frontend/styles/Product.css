@@ -3,10 +3,13 @@
 }
 .Card{
     min-height: 364px;
+    margin-top: 1rem;
     justify-content: space-between;
 }
 .CardImg {
     object-fit: contain;
+    max-height: 10rem;
+    min-height: 10rem;
 }
 .CardBody{ 
     display: flex;

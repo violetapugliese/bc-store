@@ -1,22 +1,18 @@
 import React from 'react';
-import {Card, Button} from 'react-bootstrap';
 import '../styles/Product.css'
 
 const Product = ({ product, handleAddToCart }) => {
     return (
         <div className="Product-Item">
-
-            <Card style={{ width: '18rem'}} className="Card" >
-                <Card.Img variant="top" style={{maxHeight: '10rem', minHeight: '10rem' }} className="CardImg" src={product.image} alt={product.title}/>
-                <Card.Body className="CardBody">
-                    <Card.Title>{product.title}</Card.Title>
-                    <Card.Text>
-                       <span>$ {product.price}</span>
-                       <p>{product.description}</p>
-                    </Card.Text>
-                    <Button type="button" variant="primary" onClick={handleAddToCart(product)}>Comprar</Button>
-                </Card.Body>
-            </Card>
+            <div className="card Card">
+                <img className="CardImg" src={product.image} alt={product.title}></img>
+                <div className="card-body CardBody">
+                    <h5 className="card-title">{product.title}</h5>
+                    <span>$ {product.price}</span>
+                    <p className="card-text">{product.description}</p>
+                    <button type="button"  className="btn btn-primary"  onClick={handleAddToCart(product)}>comprar</button>
+                </div>
+            </div>
         </div>
     );
 }

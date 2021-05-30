@@ -1,26 +1,26 @@
 import React from 'react';
-import { Container, Row, Col, Alert } from 'react-bootstrap';
 
 const Success = () => {
     return (
-        <Container className="min-vh-100">
-            <Row>
-                <Col md={6} >
-                    <Alert variant="success" className="my-2 ">
-                        <Alert.Heading>Hey, tu compra ha sido Exitosa</Alert.Heading>
-                        <p>
-                            Tu pedido llegará en tres días
-                </p>
-                        <hr />
-                    </Alert>
-                </Col>
-                <Col md={6}>
-                    <div className="Succes-map mt-2">
-                        Google map
+        <div className="Success">
+
+            <div className="container min-vh-100">
+                <div className="row">
+                    <div className="col col-md-6">
+                        <div className="alert alert-success" role="alert">
+                            <h4 className="alert-heading">Hey, tu compra ha sido Exitosa</h4>
+                            <p> Tu pedido llegará en tres días</p>
+                            <hr></hr>
+                        </div>
+                    </div>
+                    <div className="col col-md-6 ">
+                        <div className="Succes-map mt-2">
+                            Google map
+                        </div>
+                    </div>
                 </div>
-                </Col>
-            </Row>
-        </Container>
+            </div>
+        </div>
     );
 }
 

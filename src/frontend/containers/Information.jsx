@@ -1,5 +1,4 @@
 import React, { useRef, useContext } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import AppContext from '../context/AppContext.js';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/Checkout.css';
@@ -20,15 +19,15 @@ const handleSubmit = () => {
     const formData = new FormData(form.current);
     const buyer = {
         'name': formData.get('name'),
-        // 'lastname': formData.get('lastname'),
-        // 'email':formData.get('email'), 
-        // 'address':formData.get('address'),
-        // 'apto':formData.get('apto'),
-        // 'city':formData.get('city'),
-        // 'country':formData.get('country'),
-        // 'state':formData.get('state'),
-        // 'cp':formData.get('cp'),
-        // 'phone':formData.get('phone'),
+        'lastname': formData.get('lastname'),
+        'email':formData.get('email'), 
+        'address':formData.get('address'),
+        'apto':formData.get('apto'),
+        'city':formData.get('city'),
+        'country':formData.get('country'),
+        'state':formData.get('state'),
+        'cp':formData.get('cp'),
+        'phone':formData.get('phone'),
     }
     addToBuyer(buyer);
     history.push('/checkout/payment');
@@ -36,26 +35,26 @@ const handleSubmit = () => {
 }
 
     return (
-        <Container className="min-vh-100">
-            <Row>
-                <Col>
+        <div className="container min-vh-100">
+            <div className="row">
+                <div className="col">
                     <h2>Information</h2>
-                    <Form ref={form}>
-                        <Form.Group>
-                            <Form.Control type="text" name="name" placeholder="Enter your First Name" />
-                            {/* <Form.Control type="text" name="lastname" placeholder="Enter your Last Name" />
-                            <Form.Control type="text" name="email" placeholder="Enter email" />
-                            <Form.Control type="text" name="address" placeholder="Direction" />
-                            <Form.Control type="text" name="city" placeholder="City" />
-                            <Form.Control type="text" name="country" placeholder="Country" />
-                            <Form.Control type="text" name="state" placeholder="State" />
-                            <Form.Control type="text" name="cp" placeholder="CP" />
-                            <Form.Control type="text" name="phone" placeholder="Phone" /> */}
-                        </Form.Group>
-                    </Form>
+                    <div className="Information-user" ref={form}>
+                        <form>
+                            <input className="form-control" type="text" name="name" placeholder="Enter your First Name" />
+                            <input className="form-control" type="text" name="lastname" placeholder="Enter your Last Name" />
+                            <input className="form-control" type="text" name="email" placeholder="Enter email" />
+                            <input className="form-control" type="text" name="address" placeholder="Direction" />
+                            <input className="form-control" type="text" name="city" placeholder="City" />
+                            <input className="form-control" type="text" name="country" placeholder="Country" />
+                            <input className="form-control" type="text" name="state" placeholder="State" />
+                            <input className="form-control" type="text" name="cp" placeholder="CP" />
+                            <input className="form-control" type="text" name="phone" placeholder="Phone" />
+                        </form>
+                    </div>
 
-                </Col>
-                <Col>
+                </div>
+                <div className="col">
                     <div className="Checkout-content">
                         <h3>Su compra</h3>
                         {cart.map((item) => (
@@ -71,20 +70,20 @@ const handleSubmit = () => {
                         <h3>{`Precio total $ ${handleSumTotal()}`}</h3>
                         <div className="FormButton ">
                             <Link to="/checkout">
-                                <Button variant="danger" className="mt-2" type="submit">
+                                <button className="btn btn-danger mt-2" type="submit">
                                     Cancelar
-                                </Button>
+                                </button>
                             </Link>
-                            <Link>
-                                <Button variant="primary" className="mt-2" type="button" variant="primary" onClick={handleSubmit}>
+                            <Link to="/checkout/payment">
+                                <button className="btn btn-primary mt-2" type="button" onClick={handleSubmit}>
                                     Continuar Compra
-                                </Button>
+                                </button>
                             </Link>
                         </div>
                     </div>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 }
 

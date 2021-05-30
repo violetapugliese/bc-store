@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Product from './Product';
 import AppContext from '../context/AppContext';
 import '../styles/Products.css';
-import { Container, Col, Row } from 'react-bootstrap';
 
 const Products = () => {
     const {state, addToCart} = useContext(AppContext);
@@ -14,15 +13,15 @@ const Products = () => {
 
     return (
         <div className="Products" >
-            <Container className="Products-Item" >
-                <Row>
-                    {products.map(product => (
-                        <Col xs={12} md={4}>
-                            <Product key={product.id} product={product} handleAddToCart={handleAddToCart}/>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+            <div className="container">
+                <div className="row">
+                {products.map(product => (
+                    <div className="col col-md-4">
+                        <Product key={product.id} product={product} handleAddToCart={handleAddToCart}/>
+                    </div>
+                     ))}
+                </div>
+            </div>
         </div>
     );
 }
