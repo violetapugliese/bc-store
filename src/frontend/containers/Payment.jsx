@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import { Link } from 'react-router-dom';
-import '../styles/Checkout.css'
+import '../styles/Checkout.scss'
 
 const Payment = () => {
     const { state } = useContext(AppContext);

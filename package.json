@@ -4,7 +4,7 @@
   "description": "<<<<<<< HEAD\r # Getting Started with Create React App",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack server",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "format": "prettier --write {*.js,src/**/*.{js,jsx}}",
     "lint": "eslint src/ --fix",

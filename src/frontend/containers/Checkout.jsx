@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import '../styles/Checkout.css';
+import '../styles/Checkout.scss';
 import { Link } from 'react-router-dom';
 
 

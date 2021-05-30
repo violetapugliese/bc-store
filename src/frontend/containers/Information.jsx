@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from 'react';
 import AppContext from '../context/AppContext.js';
 import { Link, useHistory } from 'react-router-dom';
-import '../styles/Checkout.css';
+import '../styles/Checkout.scss';
 
 const Information = () => {
 const { state, addToBuyer } = useContext(AppContext);
