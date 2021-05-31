@@ -20,6 +20,8 @@ if (ENV == 'development') {
   app.use(webpackHotMiddleware(compiler));
 } 
 
+
+
 app.get('*', (req, res) => {
   res.send(`
   <!DOCTYPE html>
@@ -36,7 +38,10 @@ app.get('*', (req, res) => {
   `);
 });  
 
+
+//server
 app.listen(PORT, (err) => {
   if(err) console.log(err);
   else console.log('server running in port 3005');
 });
+
