@@ -16,8 +16,8 @@ const Products = () => {
             <div className="container">
                 <div className="row">
                 {products.map(product => (
-                    <div className="col col-md-4">
-                        <Product key={product.id} product={product} handleAddToCart={handleAddToCart}/>
+                    <div key={product.id} className="col col-md-4">
+                        <Product product={product} handleAddToCart={handleAddToCart}/>
                     </div>
                      ))}
                 </div>

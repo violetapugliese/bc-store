@@ -19,15 +19,15 @@ const Payment = () => {
                 <div className="col col-md-6">
                     <h3>Su compra</h3>
                     {cart.map((item) => (
-                            <div className="Checkout-content">
-                                <div className="Checkout-item" key={item.id}>
-                                    <div className="Checkout-element">
-                                        <h6>{item.title}</h6>
-                                        <span>$ {item.price}</span>
-                                    </div>
+                        <div className="Checkout-content" key={item.id}>
+                            <div className="Checkout-item" >
+                                <div className="Checkout-element">
+                                    <h6>{item.title}</h6>
+                                    <span>$ {item.price}</span>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                    ))}
                     <div className="Checkout-sidebar">
                         <h3>{`Precio total $ ${handleSumTotal()}`}</h3>
                         <div className="FormButton ">
@@ -36,11 +36,14 @@ const Payment = () => {
                                     Cancelar
                                 </button>
                             </Link>
-                            <Link >
-                                <button className="btn btn-primary mt-2" type="button">
-                                    Continuar Compra
-                                </button>
-                            </Link>
+                            <div >
+                                <form action="http://localhost:3030/test" method="POST">
+                                    <input type="hidden" name="price" value={handleSumTotal()} />
+                                    <input type="hidden" name="title" value="My store" />
+                                    <input type="submit" value="Pagar con Mercado Pago"
+                                        className="btn btn-primary col-12" />
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,6 @@ const handleSubmit = () => {
     }
     addToBuyer(buyer);
     history.push('/checkout/payment');
-
 }
 
     return (
@@ -39,8 +38,8 @@ const handleSubmit = () => {
             <div className="row">
                 <div className="col">
                     <h2>Information</h2>
-                    <div className="Information-user" ref={form}>
-                        <form>
+                    <div className="Information-user">
+                        <form ref={form}>
                             <input className="form-control" type="text" name="name" placeholder="Enter your First Name" />
                             <input className="form-control" type="text" name="lastname" placeholder="Enter your Last Name" />
                             <input className="form-control" type="text" name="email" placeholder="Enter email" />
@@ -52,7 +51,6 @@ const handleSubmit = () => {
                             <input className="form-control" type="text" name="phone" placeholder="Phone" />
                         </form>
                     </div>
-
                 </div>
                 <div className="col">
                     <div className="Checkout-content">
@@ -74,11 +72,11 @@ const handleSubmit = () => {
                                     Cancelar
                                 </button>
                             </Link>
-                            <Link to="/checkout/payment">
-                                <button className="btn btn-primary mt-2" type="button" onClick={handleSubmit}>
-                                    Continuar Compra
-                                </button>
-                            </Link>
+                            
+                            <button className="btn btn-primary mt-2" type="button" onClick={handleSubmit}>
+                                    Confirmar datos de compra
+                            </button>
+                            
                         </div>
                     </div>
                 </div>

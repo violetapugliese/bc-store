@@ -31,7 +31,7 @@ const Checkout = () => {
                                     <span>{item.price}</span>
                                 </div>
                                 <button type="button" onClick={handleRemove(item, i)}>
-                                <i class="fas fa-trash-alt"></i>
+                                <i className="fas fa-trash-alt"></i>
                                 </button>
                             </div>
                         ))}

@@ -11,14 +11,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div >
-                <form action="http://localhost:3030/test" method="POST">
-                    <input type="hidden" name="price" value="4500" />
-                    <input type="hidden" name="title" value="Frazada de polar" />
-                    <input type="submit" value="Comprar ahora"
-                        className="btn btn-primary col-12" />
-                </form>
-            </div>
         </div>
     );
 }
